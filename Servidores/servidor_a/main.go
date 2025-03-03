@@ -6,9 +6,8 @@ import (
 )
 
 func main() {
-	fmt.Println("🚀 Servidor A iniciado (Consulta sabritas)...")
-	go utils.PollSabritas() 
-	
+	fmt.Println("🚀 Servidor A iniciado (Consulta fantasmas)...")
+	go utils.PollFantasmas()
 
-	select {} 
+	select {}
 }

@@ -7,16 +7,16 @@ import (
 	"time"
 )
 
-func PollRefrescos() {
+func PollTumbas() {
 	for {
-		resp, err := http.Get("http://localhost:8080/refrescos") 
+		resp, err := http.Get("http://localhost:8080/tumbas")
 		if err != nil {
-			fmt.Println("❌ Error al obtener refrescos:", err)
+			fmt.Println("❌ Error al obtener tumbas:", err)
 		} else {
 			body, _ := ioutil.ReadAll(resp.Body)
-			fmt.Println("✅ Servidor B recibió refrescos:", string(body))
+			fmt.Println("✅ Servidor B recibió tumbas:", string(body))
 			resp.Body.Close()
 		}
-		time.Sleep(5 * time.Second) 
+		time.Sleep(5 * time.Second)
 	}
 }

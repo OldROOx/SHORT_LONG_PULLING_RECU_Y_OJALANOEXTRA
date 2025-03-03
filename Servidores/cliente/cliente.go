@@ -11,11 +11,11 @@ func main() {
 	fmt.Println("🕐 Cliente esperando actualización en API Central...")
 
 	for {
-	
-		resp, err := http.Get("http://localhost:8080/refrescos/check-deleted")
+
+		resp, err := http.Get("http://localhost:8080/tumbas/check-deleted")
 		if err != nil {
 			fmt.Println("❌ Error en long polling:", err)
-			time.Sleep(5 * time.Second) 
+			time.Sleep(5 * time.Second)
 			continue
 		}
 
@@ -23,7 +23,7 @@ func main() {
 			fmt.Println("⏳ Sin cambios, esperando...")
 		} else {
 			body, _ := ioutil.ReadAll(resp.Body)
-			fmt.Println("🚀 Refresco eliminado:", string(body))
+			fmt.Println("🚀 Tumba eliminada:", string(body))
 		}
 
 		resp.Body.Close()
